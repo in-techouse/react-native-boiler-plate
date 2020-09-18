@@ -2,7 +2,7 @@ import React from 'react';
 import {
   StyleSheet,
   TextInput,
-  KeyboardAvoidingView,
+  KeyboardAvoidingView, 
   Text,
   View,
   Button,
@@ -13,7 +13,7 @@ const RegisterationScreen = (props) => {
   return (
     <View>
       <KeyboardAvoidingView>
-        <Text> Registration Screen Screen</Text>
+        <Text> Registration Screen</Text>
         <TextInput placeholder="email" />
         <TextInput placeholder="password" />
         <TextInput placeholder="phone Number" />

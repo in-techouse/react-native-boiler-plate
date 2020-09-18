@@ -4,14 +4,21 @@
   "private": true,
   "scripts": {
     "android": "react-native run-android",
+    "android-build": "react-native bundle --platform android --dev false --entry-file index.js --bundle-output android/app/src/main/assets/index.android.bundle --assets-dest android/app/src/main/res/",
+    "android-release-build": "react-native run-android --variant=release",
     "ios": "react-native run-ios",
+    "ios-device": "react-native run-ios --device",
+    "ios-iphone-8": "react-native run-ios --simulator='iPhone 8 Plus'",
+    "ios-iphone-11": "react-native run-ios --simulator='iPhone 11 Pro Max'",
+    "ios-ipad-pro": "react-native run-ios --simulator='iPad Pro (12.9-inch) (4th generation)'",
     "start": "react-native start",
     "test": "jest",
     "lint": "eslint ."
   },
   "dependencies": {
     "react": "16.13.1",
-    "react-native": "0.63.2"
+    "react-native": "0.63.2",
+    "typescript": "^3.6.5"
   },
   "devDependencies": {
     "@babel/core": "^7.11.6",

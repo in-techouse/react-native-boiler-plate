@@ -1,26 +1,31 @@
 import React from 'react';
 import {
   StyleSheet,
-  TouchableOpacity,
   Text,
   TextInput,
   View,
+  KeyboardAvoidingView,
+  Button,
 } from 'react-native';
 
-export default function LoginScreen({navigation}) {
+const LoginScreen = (props) => {
+  const {navigation} = props;
   return (
     <View>
+    <KeyboardAvoidingView>
       <Text> Login Screen</Text>
       <TextInput placeholder="email" />
       <TextInput placeholder="password" />
-      <TouchableOpacity onPress={() => navigation.navigate('forget')}>
-        <Text>Forget Password</Text>
-      </TouchableOpacity>
-      <TouchableOpacity onPress={() => navigation.navigate('Register')}>
-        <Text>Dont't Have Account Click here to Register</Text>
-      </TouchableOpacity>
+      </KeyboardAvoidingView>
+      
+      <Button title="Sign in" onPress={() => navigation.navigate('Home')}/>
+      <Button title="Forget Password" onPress={() => navigation.navigate('Forget')}/>
+      <Button title="Register" onPress={() => navigation.navigate('Register')}/>
+        
     </View>
   );
-}
+};
 
 const styles = StyleSheet.create({});
+
+export default LoginScreen;

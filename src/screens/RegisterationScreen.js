@@ -1,17 +1,28 @@
 import React from 'react';
-import {StyleSheet, TextInput, Text, View} from 'react-native';
+import {
+  StyleSheet,
+  TextInput,
+  KeyboardAvoidingView,
+  Text,
+  View,
+  Button,
+} from 'react-native';
 
-export default function RegisterationScreen() {
+const RegisterationScreen = (props) => {
+  const {navigation} = props;
   return (
     <View>
-      <View>
+      <KeyboardAvoidingView>
         <Text> Registration Screen Screen</Text>
         <TextInput placeholder="email" />
         <TextInput placeholder="password" />
         <TextInput placeholder="phone Number" />
-      </View>
+      </KeyboardAvoidingView>
+      <Button title="Register" onPress={() => navigation.navigate('Home')} />
     </View>
   );
-}
+};
 
 const styles = StyleSheet.create({});
+
+export default RegisterationScreen;

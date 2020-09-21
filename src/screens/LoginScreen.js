@@ -8,6 +8,7 @@ import {
 } from 'react-native';
 import {useForm} from 'react-hook-form';
 
+import SocialLogin from '../components/socialLogin/SocialLogin';
 import Input from '../components/input/Input';
 
 const LoginScreen = (props) => {
@@ -77,6 +78,7 @@ const LoginScreen = (props) => {
           onPress={() => navigation.navigate('Register')}
         />
       </View>
+      <SocialLogin />
     </View>
   );
 };

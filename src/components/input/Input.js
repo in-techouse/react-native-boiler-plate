@@ -3,7 +3,7 @@ import {View, Text, StyleSheet, TextInput} from 'react-native';
 import {Controller} from 'react-hook-form';
 
 const Input = (props) => {
-  console.log('Input Component Props are: ', props);
+  // console.log('Input Component Props are: ', props);
   const {
     name,
     control,

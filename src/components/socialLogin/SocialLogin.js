@@ -1,13 +1,13 @@
 import React from 'react';
 import {StyleSheet, View} from 'react-native';
 import GoogleLogin from './GoogleLogin';
-// import FacebookLogin from './FacebookLogin';
+import FacebookLogin from './FacebookLogin';
 
 const SocialLogin = () => {
   return (
     <View>
       <GoogleLogin />
-      {/* <FacebookLogin /> */}
+      <FacebookLogin />
     </View>
   );
 };

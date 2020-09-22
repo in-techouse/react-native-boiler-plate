@@ -77,6 +77,11 @@ const LoginScreen = (props) => {
           title="Register"
           onPress={() => navigation.navigate('Register')}
         />
+        <View style={styles.btn}></View>
+        <Button
+          title="Sign in with Phone NO"
+          onPress={() => navigation.navigate('Phone')}
+        />
       </View>
       <Text style={styles.signline}> ────────────  Sign in With  ────────────</Text>
       <SocialLogin />

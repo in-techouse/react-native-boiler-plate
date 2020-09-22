@@ -78,6 +78,7 @@ const LoginScreen = (props) => {
           onPress={() => navigation.navigate('Register')}
         />
       </View>
+      <Text style={styles.signline}> ────────────  Sign in With  ────────────</Text>
       <SocialLogin />
     </View>
   );
@@ -90,6 +91,9 @@ const styles = StyleSheet.create({
   btn: {
     marginTop: 10,
   },
+  signline:{
+    marginVertical:20,
+  }
 });
 
 export default LoginScreen;

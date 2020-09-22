@@ -1,11 +1,11 @@
 import React, {useState} from 'react';
-import {Button} from 'react-native';
+import { Button,Text,View} from 'react-native';
 import {
   GoogleSignin,
-  GoogleSigninButton,
   statusCodes,
 } from '@react-native-community/google-signin';
-import { set } from 'react-native-reanimated';
+
+import Icon from 'react-native-vector-icons/FontAwesome';
 
 const signIn = async () => {
   try {
@@ -33,15 +33,21 @@ GoogleSignin.configure({
 const GoogleLogin = () => {
   const [user, setuser] = useState({});
   return (
-    <>
-      <GoogleSigninButton
-        style={{width: 192, height: 48}}
+    <View style={{marginVertical:10}}>
+      {/* <GoogleSigninButton
+        style={{width:'100%', height: 45,marginVertical:10}}
         size={GoogleSigninButton.Size.Wide}
         color={GoogleSigninButton.Color.Dark}
         onPress={signIn}
         
-      />
-    </>
+      /> */}
+      <Icon.Button
+        name="google"
+        backgroundColor="#db3236"
+        onPress={signIn}>
+        <Text style={{marginLeft:65,color:'white'}}>Login with Google</Text>
+      </Icon.Button>
+    </View>
   );
 };
 

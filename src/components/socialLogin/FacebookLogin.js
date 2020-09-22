@@ -4,8 +4,9 @@ import { LoginButton, AccessToken } from 'react-native-fbsdk';
 
 const FacebookLogin = () => {
   return (
-    <View>
+    <View >
        <LoginButton
+        style={{width:"100%",height:35}}
           onLoginFinished={
             (error, result) => {
               if (error) {

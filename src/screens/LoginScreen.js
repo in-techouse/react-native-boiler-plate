@@ -17,6 +17,7 @@ const LoginScreen = (props) => {
 
   const onSubmit = (data) => {
     console.log('Login Screen, Data is: ', data);
+    navigation.navigate('Home');
   };
 
   return (

@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState} from 'react';
 import {
   StyleSheet,
   TextInput,
@@ -13,6 +13,12 @@ import {useForm} from 'react-hook-form';
 const RegisterationScreen = (props) => {
   const {navigation} = props;
   const {control, handleSubmit, errors} = useForm();
+  const [iconvalue, seticonvalue] = useState('eye');
+  const [secureTextEntry, setsecureTextEntry] = useState(true);
+  const onclicked = () => {
+    seticonvalue(iconvalue === 'eye' ? 'eye-slash' : 'eye');
+    setsecureTextEntry(!secureTextEntry);
+  };
 
   const onSubmit = (data) => {
     console.log('Register Screen, Data is: ', data);
@@ -45,7 +51,9 @@ const RegisterationScreen = (props) => {
           control={control}
           error={errors.password}
           keyboardType="default"
-          secureTextEntry
+          secureTextEntry={secureTextEntry}
+          iconvalue={iconvalue}
+          onclicked={onclicked}
           validationRules={{
             required: {
               value: true,
@@ -75,7 +83,11 @@ const RegisterationScreen = (props) => {
           }}
         />
       </KeyboardAvoidingView>
-      <Button title="Register" style={styles.btn} onPress={handleSubmit(onSubmit)} />
+      <Button
+        title="Register"
+        style={styles.btn}
+        onPress={handleSubmit(onSubmit)}
+      />
     </View>
   );
 };

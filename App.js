@@ -9,6 +9,7 @@ import RegisterationScreen from './src/screens/RegisterationScreen';
 import HomeScreen from './src/screens/HomeScreen';
 import PhoneLoginScreen from './src/screens/PhoneLoginScreen';
 import OTPScreen from './src/screens/OTPScreen';
+import Maps from './src/screens/Maps';
 
 import {Provider as AuthProvider} from './src/context/AuthContext';
 
@@ -24,6 +25,7 @@ const App = () => {
           <Stack.Screen name="Register" component={RegisterationScreen} />
           <Stack.Screen name="Phone" component={PhoneLoginScreen} />
           <Stack.Screen name="OTP" component={OTPScreen} />
+          <Stack.Screen name="Map" component={Maps} />
           <Stack.Screen name="Home" component={HomeScreen} />
         </Stack.Navigator>
       </NavigationContainer>

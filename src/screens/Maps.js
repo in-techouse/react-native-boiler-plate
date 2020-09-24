@@ -1,5 +1,5 @@
 import React from 'react';
-import {StyleSheet, Text, View} from 'react-native';
+import {StyleSheet, View} from 'react-native';
 import MapView, { PROVIDER_GOOGLE } from 'react-native-maps'; // remove PROVIDER_GOOGLE import if not using Google Maps
 
 // Map api key:AIzaSyAjSaRirjc9nVf4IW33c1TixybXo3YqpLs
@@ -16,7 +16,7 @@ const styles = StyleSheet.create({
  },
 });
 
-export default () => (
+export default Maps = () => (
    <View style={styles.container}>
      <MapView
        provider={PROVIDER_GOOGLE} // remove if not using Google Maps

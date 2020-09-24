@@ -1,7 +1,9 @@
 import 'react-native-gesture-handler';
 import React from 'react';
+import {Modal, View , Text,StyleSheet} from 'react-native';
 import {NavigationContainer} from '@react-navigation/native';
 import {createStackNavigator} from '@react-navigation/stack';
+import {useNetInfo} from '@react-native-community/netinfo';
 
 import LoginScreen from './src/screens/LoginScreen';
 import ForgetpasswordScreen from './src/screens/ForgetpasswordScreen';
@@ -16,8 +18,23 @@ import {Provider as AuthProvider} from './src/context/AuthContext';
 const Stack = createStackNavigator();
 
 const App = () => {
+  const netInfo = useNetInfo();
+  const net = netInfo.isConnected;
+
   return (
     <>
+      {console.log(net)}
+      {net ? null : (
+        <Modal animationType="fade" transparent={true} visible={true}>
+          <View style={styles.centeredView}>
+            <View style={styles.modalView}>
+              <Text style={styles.modalText}>Sorry we are Offline 🤪</Text>
+
+             
+            </View>
+          </View>
+        </Modal>
+      )}
       <NavigationContainer>
         <Stack.Navigator>
           <Stack.Screen name="Login" component={LoginScreen} />
@@ -40,3 +57,38 @@ export default () => {
     </AuthProvider>
   );
 };
+
+
+const styles = StyleSheet.create({
+  centeredView: {
+    flex: 1,
+    justifyContent: "center",
+    alignItems: "center",
+    marginTop: 22
+  },
+  modalView: {
+    margin: 20,
+    backgroundColor: "white",
+    borderRadius: 20,
+    padding: 35,
+    alignItems: "center",
+    shadowColor: "#000",
+    shadowOffset: {
+      width: 0,
+      height: 2
+    },
+    shadowOpacity: 0.25,
+    shadowRadius: 3.84,
+    elevation: 5
+  },
+  
+  textStyle: {
+    color: "white",
+    fontWeight: "bold",
+    textAlign: "center"
+  },
+  modalText: {
+    marginBottom: 15,
+    textAlign: "center"
+  }
+});

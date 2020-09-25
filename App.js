@@ -3,8 +3,8 @@ import React from 'react';
 import {Modal, View , Text,StyleSheet} from 'react-native';
 import {NavigationContainer} from '@react-navigation/native';
 import {createStackNavigator} from '@react-navigation/stack';
-import {useNetInfo} from '@react-native-community/netinfo';
 
+import InternetCheck from './src/components/interntcheck/InternetCheck';
 import LoginScreen from './src/screens/LoginScreen';
 import ForgetpasswordScreen from './src/screens/ForgetpasswordScreen';
 import RegisterationScreen from './src/screens/RegisterationScreen';
@@ -23,18 +23,7 @@ const App = () => {
 
   return (
     <>
-      {console.log(net)}
-      {net ? null : (
-        <Modal animationType="fade" transparent={true} visible={true}>
-          <View style={styles.centeredView}>
-            <View style={styles.modalView}>
-              <Text style={styles.modalText}>Sorry we are Offline 🤪</Text>
-
-             
-            </View>
-          </View>
-        </Modal>
-      )}
+       <InternetCheck />
       <NavigationContainer>
         <Stack.Navigator>
           <Stack.Screen name="Login" component={LoginScreen} />
